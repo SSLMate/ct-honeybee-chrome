@@ -195,10 +195,24 @@ function pollinate_with_all_auditors(sths) {
 	return sths_promise;
 }
 
+function get_random_delay() {
+	var values = new Uint32Array(1);
+	window.crypto.getRandomValues(values);
+	return (2048 + values[0] % 2048) / 60.0; // use power of 2 as modulus to avoid bias
+}
+
+function schedule_pollination() {
+	chrome.alarms.create('pollinate', {delayInMinutes: get_random_delay()});
+}
+
+function pollinate() {
+	get_all_sths().then(pollinate_with_all_auditors).then(schedule_pollination);
+}
+
 chrome.alarms.onAlarm.addListener(function(alarm) {
-	get_all_sths().then(pollinate_with_all_auditors);
+	pollinate();
 });
 
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.alarms.create('pollinate', {periodInMinutes: 30.0});
+	pollinate();
 });
