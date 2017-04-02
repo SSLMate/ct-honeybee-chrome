@@ -7,6 +7,15 @@
 	"homepage_url": "https://certspotter.com",
 	"version": "0.0.2",
 
+	"icons": {
+		"16": "icons/ct-honeybee-16px.png",
+		"19": "icons/ct-honeybee-19px.png",
+		"32": "icons/ct-honeybee-32px.png",
+		"38": "icons/ct-honeybee-38px.png",
+		"48": "icons/ct-honeybee-48px.png",
+		"128": "icons/ct-honeybee-128px.png"
+	},
+
 	"offline_enabled": false,
 
 	"permissions": [
