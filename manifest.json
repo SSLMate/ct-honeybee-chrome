@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+
+	"name": "Certificate Transparency Honeybee",
+	"description": "Pollinates STHs between Certificate Transparency logs and auditors",
+	"author": "SSLMate",
+	"homepage_url": "https://certspotter.com",
+	"version": "0.0.2",
+
+	"offline_enabled": false,
+
+	"permissions": [
+		"alarms",
+		"https://*/ct/v1/get-sth",
+		"https://*/*/ct/v1/get-sth",
+		"https://*/.well-known/ct-gossip/v1/sth-pollination"
+	],
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	}
+}
