@@ -79,6 +79,20 @@ function is_pollen(obj) {
 	return is_object(obj) && "sths" in obj && is_array(obj["sths"]);
 }
 
+function swap(array, i, j) {
+	var tmp = array[i];
+	array[i] = array[j];
+	array[j] = tmp;
+}
+function shuffle(array) {
+	array = array.slice();
+	for (var len = array.length; len > 0; --len) {
+		var other = Math.floor(Math.random() * len);
+		swap(array, len - 1, other);
+	}
+	return array;
+}
+
 function parse_sth_for_log(raw_json, log_id) {
 	try {
 		var sth = JSON.parse(raw_json);
@@ -172,9 +186,8 @@ function pollinate_with_auditor(auditor_domain, sths) {
 }
 
 function pollinate_with_all_auditors(sths) {
-	// TODO: visit auditors in random order
 	var sths_promise = Promise.resolve(sths);
-	auditors.forEach(function(auditor_domain) {
+	shuffle(auditors).forEach(function(auditor_domain) {
 		sths_promise = sths_promise.then(function(sths) {
 			return pollinate_with_auditor(auditor_domain, sths);
 		});
