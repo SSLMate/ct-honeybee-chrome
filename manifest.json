@@ -20,9 +20,26 @@
 
 	"permissions": [
 		"alarms",
-		"https://*/ct/v1/get-sth",
-		"https://*/*/ct/v1/get-sth",
-		"https://*/.well-known/ct-gossip/v1/sth-pollination"
+		"https://ct.googleapis.com/aviator/ct/v1/get-sth",
+		"https://ct.googleapis.com/pilot/ct/v1/get-sth",
+		"https://ct.googleapis.com/icarus/ct/v1/get-sth",
+		"https://ct.googleapis.com/rocketeer/ct/v1/get-sth",
+		"https://ct.googleapis.com/skydiver/ct/v1/get-sth",
+		"https://ct1.digicert-ct.com/log/ct/v1/get-sth",
+		"https://ct.ws.symantec.com/ct/v1/get-sth",
+		"https://vega.ws.symantec.com/ct/v1/get-sth",
+		"https://ctlog.api.venafi.com/ct/v1/get-sth",
+		"https://ctlog.wosign.com/ct/v1/get-sth",
+		"https://ctserver.cnnic.cn/ct/v1/get-sth",
+		"https://ct.startssl.com/ct/v1/get-sth",
+		"https://www.certificatetransparency.cn/ct/ct/v1/get-sth",
+		"https://ctlog-gen2.api.venafi.com/ct/v1/get-sth",
+		"https://sirius.ws.symantec.com/ct/v1/get-sth",
+		"https://ct2.digicert-ct.com/log/ct/v1/get-sth",
+		"https://mammoth.ct.comodo.com/ct/v1/get-sth",
+		"https://sabre.ct.comodo.com/ct/v1/get-sth",
+		"https://certspotter.com/.well-known/ct/v1/sth-pollination",
+		"https://ct.grahamedgecombe.com/.well-known/ct/v1/sth-pollination"
 	],
 
 	"background": {
