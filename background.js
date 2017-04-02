@@ -145,7 +145,7 @@ function get_all_sths() {
 	return Promise.all(promises).then(filter_sths);
 }
 
-function pollinate(auditor_domain, sths) {
+function pollinate_with_auditor(auditor_domain, sths) {
 	return new Promise(function(resolve, reject) {
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', 'https://' + auditor_domain + '/.well-known/ct/v1/sth-pollination');
@@ -171,19 +171,19 @@ function pollinate(auditor_domain, sths) {
 	});
 }
 
-function pollinate_all(sths) {
+function pollinate_with_all_auditors(sths) {
 	// TODO: visit auditors in random order
 	var sths_promise = Promise.resolve(sths);
 	auditors.forEach(function(auditor_domain) {
 		sths_promise = sths_promise.then(function(sths) {
-			return pollinate(auditor_domain, sths);
+			return pollinate_with_auditor(auditor_domain, sths);
 		});
 	});
 	return sths_promise;
 }
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
-	get_all_sths().then(pollinate_all);
+	get_all_sths().then(pollinate_with_all_auditors);
 });
 
 chrome.runtime.onInstalled.addListener(function() {
