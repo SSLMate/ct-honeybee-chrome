@@ -159,7 +159,7 @@ function get_all_sths() {
 	return Promise.all(promises).then(filter_sths);
 }
 
-function pollinate_with_auditor(auditor_domain, sths) {
+function pollinate_auditor(auditor_domain, sths) {
 	return new Promise(function(resolve, reject) {
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', 'https://' + auditor_domain + '/.well-known/ct/v1/sth-pollination');
@@ -185,11 +185,11 @@ function pollinate_with_auditor(auditor_domain, sths) {
 	});
 }
 
-function pollinate_with_all_auditors(sths) {
+function pollinate_all_auditors(sths) {
 	var sths_promise = Promise.resolve(sths);
 	shuffle(auditors).forEach(function(auditor_domain) {
 		sths_promise = sths_promise.then(function(sths) {
-			return pollinate_with_auditor(auditor_domain, sths);
+			return pollinate_auditor(auditor_domain, sths);
 		});
 	});
 	return sths_promise;
@@ -206,7 +206,7 @@ function schedule_pollination() {
 }
 
 function pollinate() {
-	get_all_sths().then(pollinate_with_all_auditors).then(schedule_pollination);
+	get_all_sths().then(pollinate_all_auditors).then(schedule_pollination);
 }
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
