@@ -79,6 +79,24 @@ function is_pollen(obj) {
 	return is_object(obj) && "sths" in obj && is_array(obj["sths"]);
 }
 
+function is_known_log(log_id) {
+	for (var i = 0; i < logs.length; ++i) {
+		if (logs[i][1] == log_id) {
+			return true;
+		}
+	}
+	return false;
+}
+function is_same_sth(a, b) {
+	return a["log_id"] == b["log_id"] &&
+		a["tree_size"] == b["tree_size"] &&
+		a["timestamp"] == b["timestamp"] &&
+		a["sha256_root_hash"] == b["sha256_root_hash"];
+}
+function sth_finder(target_sth) {
+	return function(sth) { return is_same_sth(sth, target_sth); };
+}
+
 function swap(array, i, j) {
 	var tmp = array[i];
 	array[i] = array[j];
@@ -168,7 +186,8 @@ function pollinate_auditor(auditor_domain, sths) {
 		xhr.onload = function() {
 			if (xhr.status == 200) {
 				parse_pollen(xhr.responseText).forEach(function(sth) {
-					if (is_sth(sth)) {
+					if (is_sth(sth) && is_known_log(sth["log_id"])
+							&& sths.findIndex(sth_finder(sth)) == -1) {
 						sths.push(sth);
 					}
 				});
