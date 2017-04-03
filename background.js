@@ -68,7 +68,7 @@ function is_number(obj) {
 }
 function is_sth(obj) {
 	return is_object(obj) &&
-		"sth_version" in obj && is_number(obj["sth_version"]) &&
+		"sth_version" in obj && obj["sth_version"] === 0 &&
 		"tree_size" in obj && is_number(obj["tree_size"]) &&
 		"timestamp" in obj && is_number(obj["timestamp"]) &&
 		"sha256_root_hash" in obj && is_base64(obj["sha256_root_hash"]) &&
