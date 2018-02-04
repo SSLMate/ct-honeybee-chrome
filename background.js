@@ -33,6 +33,7 @@ var logs = [
 	[ "ct.cloudflare.com/logs/nimbus2021", "RJRlLrDuzq/EQAfYqP4owNrmgr7YyzG1P9MzlrW2gag=" ],
 	[ "ct.filippo.io/behindthesofa", "sLeEvIHA3cR1ROiD8FmFu5B30TTYq4iysuUzmAuOUIs=" ],
 	[ "ct.gdca.com.cn", "yc+JCiEQnGZswXo+0GXJMNDgE1qf66ha8UIQuAckIao=" ],
+	[ "ct.googleapis.com/aviator", "aPaY+B9kgr46jO65KB1M/HFRXWeT1ETRCmesu09P+8Q=" ],
 	[ "ct.googleapis.com/daedalus", "HQJLjrFJizRN/YfqPvwJlvdQbyNdHUlwYaR3PEOcJfs=" ],
 	[ "ct.googleapis.com/icarus", "KTxRllTIOWW6qlD8WAfUt2+/WHopctykwwz05UVH9Hg=" ],
 	[ "ct.googleapis.com/logs/argon2017", "+tTJfMSe4vishcXqXOoJ0CINu/TknGtQZi/4aPhrjCg=" ],

@@ -26,6 +26,7 @@
 		"https://ct.cloudflare.com/logs/nimbus2021/ct/v1/get-sth",
 		"https://ct.filippo.io/behindthesofa/ct/v1/get-sth",
 		"https://ct.gdca.com.cn/ct/v1/get-sth",
+		"https://ct.googleapis.com/aviator/ct/v1/get-sth",
 		"https://ct.googleapis.com/daedalus/ct/v1/get-sth",
 		"https://ct.googleapis.com/icarus/ct/v1/get-sth",
 		"https://ct.googleapis.com/logs/argon2017/ct/v1/get-sth",
