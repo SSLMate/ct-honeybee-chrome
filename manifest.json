@@ -20,6 +20,7 @@
 
 	"permissions": [
 		"alarms",
+		"https://ct.cloudflare.com/logs/nimbus2017/ct/v1/get-sth",
 		"https://ct.cloudflare.com/logs/nimbus2018/ct/v1/get-sth",
 		"https://ct.cloudflare.com/logs/nimbus2019/ct/v1/get-sth",
 		"https://ct.cloudflare.com/logs/nimbus2020/ct/v1/get-sth",

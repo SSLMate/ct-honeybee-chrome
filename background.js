@@ -27,6 +27,7 @@
 
 var logs = [
 	// [ "Log Address", "Log ID (base64-encoded sha256 of log public key)" ]
+	[ "ct.cloudflare.com/logs/nimbus2017", "H7w24ALt6X9AGZ6Gs1c7ikIX2AGHdGrQ2gOgYFTSDfQ=" ],
 	[ "ct.cloudflare.com/logs/nimbus2018", "23Sv7ssp7LH+yj5xbSzluaq7NveEcYPHXZ1PN7Yfv2Q=" ],
 	[ "ct.cloudflare.com/logs/nimbus2019", "dH7agzGtMxCRIZzOJU9CcMK//V5CIAjGNzV55hB7zFY=" ],
 	[ "ct.cloudflare.com/logs/nimbus2020", "Xqdz+d9WwOe1Nkh90EngMnqRmgyEoRIShBh1loFxRVg=" ],
